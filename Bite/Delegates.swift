@@ -22,6 +22,7 @@ extension MapAndTableViewController:UITableViewDelegate, UITableViewDataSource{
        locationManager.requestWhenInUseAuthorization()
        locationManager.requestLocation()
        table.delegate = self
+        table.isScrollEnabled = true
     }
     
     

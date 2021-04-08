@@ -8,7 +8,10 @@
 import Foundation
 import CoreData
 
-struct Venue {
+
+
+
+ struct Venue {
     var name:String?
     var id:String?
     var rating:Float?
@@ -22,7 +25,7 @@ struct Venue {
 }
 
 
-struct User {
+ struct User {
     var first_name:String?
     var last_name:String?
     var email:String?
@@ -32,19 +35,28 @@ struct User {
 }
 
 
-struct review {
+ struct review {
     var reviewer:String?
     var resturantName:String?
     var rating:Float?
 }
 
+
 func checkIfUserExists(username:String) {
-    let moc = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     let query = username
     let request:NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
     request.predicate = NSPredicate(format: "name == %@", query)
     
 }
+
+
+
+
+
+
+
+
 
 
 

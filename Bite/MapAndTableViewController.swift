@@ -13,9 +13,9 @@ class MapAndTableViewController: UIViewController {
     
     //MARK: Declerations
     
+    public var local_resturants:[Venue] = []
    
-   
-    var local_resturants:[Venue] = []
+    
     
     @IBOutlet weak var table: UITableView!
     
@@ -32,6 +32,7 @@ class MapAndTableViewController: UIViewController {
         self.fetchYelpData(latitude: lat, longitude: long, completionHandler:{  jsonPayload, error in
             if let jsonPayload = jsonPayload {
                 self.local_resturants = jsonPayload
+                
             }
             DispatchQueue.main.async {
                 self.table.reloadData()

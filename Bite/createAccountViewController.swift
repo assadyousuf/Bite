@@ -11,17 +11,22 @@ import CoreData
 class createAccountViewController: UIViewController {
     
     //MARK: Declerations
-    
+    var container: NSPersistentContainer!
+
     //
     
     //MARK: Before Page Loads
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "UserEntity", in: context)
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.isMovingFromParent {
+            (self.parent as? ViewController)?.container = container
+            
+        }
     }
     
        
