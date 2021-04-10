@@ -22,20 +22,24 @@ class ViewController: UIViewController {
     
     //MARK: Before Page Loads
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         BiteLogo.image = UIImage(named: "logo.jpg")
         LogInButton.layer.cornerRadius = 30
         CreateAccountButton.layer.cornerRadius = 30
-        guard container != nil else {
-                   fatalError("This view needs a persistent container.")
-               }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        container = appDelegate.persistentContainer
+       
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC = segue.destination as? createAccountViewController {
-            nextVC.container = container
+            nextVC.managedObjectContext = container.viewContext
+        }
+        else if let nextVC = segue.destination as? LogInDetailViewController {
+            nextVC.moc = container.viewContext
         }
     }
     

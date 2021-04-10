@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 import MapKit
+import CoreData
 
 class MapAndTableViewController: UIViewController {
     
     //MARK: Declerations
     
+    @IBOutlet weak var naviagtionItem: UINavigationItem!
+    
     public var local_resturants:[Venue] = []
+    var mag : NSManagedObjectContext?
    
     
     
@@ -23,6 +27,37 @@ class MapAndTableViewController: UIViewController {
     var resultSearchController:UISearchController? = nil
     //
     let locationManager = CLLocationManager()
+  
+  
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            // Your code...
+            self.saveLocalResturants()
+        }
+    }
+     
+    func saveLocalResturants() {
+        
+        for v in local_resturants{
+        Venue.saveResturant(name: v.name!, id: v.id!, rating: v.rating!, price: v.price!, is_closed: v.is_closed!, distance: v.distance!, address: v.address!, list_of_reviews: v.list_of_reviews, moc: mag)
+        }
+
+    }
+    
+    
+    func loadLocalResturantReviews(){
+        let list = Venue.LoadData(moc: mag)
+        for l in list! {
+            for r in local_resturants {
+                if l.name == r.name {
+                    r.list_of_reviews = l.list_of_reviews as! [review]
+                }
+            }
+        }
+    }
+    
     
     
   
@@ -39,9 +74,14 @@ class MapAndTableViewController: UIViewController {
                 for r in self.local_resturants {
                     if let name_ = r.name, let address_ = r.address {
                         self.geoCoder(address: address_, name:name_)
+                      //  User.delete(moc: self.mag, entity_name: "VenueEntity")
+                      //  self.loadLocalResturantReviews()
+                        
+                        
                     }
                     
                 }
+                self.loadLocalResturantReviews()
             }
         }
             )
