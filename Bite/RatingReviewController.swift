@@ -29,6 +29,7 @@ class RatingReviewController:UIViewController{
             r.venueName = selectedVenue?.name
             
             selectedVenue?.addToListOfReviews(r)
+            r.addToListOfVenuesReviewed(selectedVenue!)
             
            
             

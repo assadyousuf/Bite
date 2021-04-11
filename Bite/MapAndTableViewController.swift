@@ -35,6 +35,7 @@ class MapAndTableViewController: UIViewController {
         if self.isMovingFromParent {
             (self.parent as? LogInDetailViewController)?.currentUser = currentUser
         }
+       
     }
      
     
@@ -50,7 +51,10 @@ class MapAndTableViewController: UIViewController {
                        // j.rating = (i.ratingNum + j.rating ) / Double(j.review_count-1)
                         j.rating = ((Double(j.review_count)-1.0) * j.rating) + i.ratingNum
                         j.rating = j.rating / Double(j.review_count)
-                        j.listOfReviews = result                    }
+                        for k in result {
+                            j.addToListOfReviews(k)
+                        }
+                                       }
                 }
             }
         } catch {
@@ -186,6 +190,14 @@ func fetchYelpData(latitude: Double,longitude: Double, completionHandler: @escap
             }.resume()
         
         
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextVC = segue.destination as? myProfileViewController {
+            nextVC.currentUser = self.currentUser
+        }
+       
     }
     
     

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     //MARK: Before Page Loads
     override func viewDidLoad() {
         
-        //DatabaseManager.delete(entity_name: "ReviewEntity")
+       // DatabaseManager.delete(entity_name: "ReviewEntity")
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         BiteLogo.image = UIImage(named: "logo.jpg")
@@ -61,6 +61,12 @@ class ViewController: UIViewController {
                 newUser.setValue(Email, forKey: "email")
                 newUser.setValue(Username, forKey: "username")
                 newUser.setValue(Password, forKey: "password")
+                let image = UIImage(named: "logo.jpg")
+                let data = image!.pngData()
+                newUser.setValue(data, forKey: "profilePic")
+        
+                
+               
                 do {
                     try self.context.save()
                     print("Sucesss Saving")

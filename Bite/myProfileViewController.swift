@@ -11,13 +11,13 @@ import UIKit
 class myProfileViewController: UIViewController{
  
     @IBOutlet weak var profileImage: UIImageView!
-    
+    var currentUser:UserEntity?
     @IBOutlet weak var editImageButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         editImageButton.layer.cornerRadius = 20
-        profileImage.image = UIImage(named: "logo.jpg")
+        profileImage.image = (DatabaseManager.findUsername(Username: currentUser?.username!))
         profileImage.layer.borderWidth = 1
         profileImage.layer.masksToBounds = false
         profileImage.layer.borderColor = UIColor.black.cgColor
@@ -33,6 +33,9 @@ class myProfileViewController: UIViewController{
             present(imagePickerVC, animated: true)
     }
     
+    
+    
+    
    
 
 }
@@ -47,7 +50,6 @@ extension myProfileViewController:UIImagePickerControllerDelegate, UINavigationC
             profileImage.image = image
             profileImage.layer.cornerRadius = profileImage.frame.height/2
             profileImage.contentMode = .scaleAspectFill
-            
         }
     }
 }

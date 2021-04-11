@@ -23,6 +23,7 @@ extension UserEntity {
     @NSManaged public var reviews: NSObject?
     @NSManaged public var username: String?
     @NSManaged public var reviews_given: NSSet?
+    
 
 }
 
