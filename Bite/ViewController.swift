@@ -23,7 +23,10 @@ class ViewController: UIViewController {
     //MARK: Before Page Loads
     override func viewDidLoad() {
         
-       // DatabaseManager.delete(entity_name: "ReviewEntity")
+      // DatabaseManager.delete(entity_name: "ReviewEntity")
+       //DatabaseManager.delete(entity_name: "UserEntity")
+       //DatabaseManager.delete(entity_name: "VenueEntity")
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         BiteLogo.image = UIImage(named: "logo.jpg")
@@ -63,7 +66,7 @@ class ViewController: UIViewController {
                 newUser.setValue(Password, forKey: "password")
                 let image = UIImage(named: "logo.jpg")
                 let data = image!.pngData()
-                newUser.setValue(data, forKey: "profilePic")
+                newUser.setValue(data, forKey: "profilePicture")
         
                 
                

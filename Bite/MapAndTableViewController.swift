@@ -17,8 +17,8 @@ class MapAndTableViewController: UIViewController {
     @IBOutlet weak var naviagtionItem: UINavigationItem!
     
     public var local_resturants:[VenueEntity] = []
-    var mag : NSManagedObjectContext?
-    var currentUser:UserEntity?
+    public var mag : NSManagedObjectContext?
+    public var currentUser:UserEntity?
    
     
     

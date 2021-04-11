@@ -14,10 +14,27 @@ class myProfileViewController: UIViewController{
     var currentUser:UserEntity?
     @IBOutlet weak var editImageButton: UIButton!
     
+    @IBOutlet weak var saveChangesButton: UIButton!
+    
+    @IBOutlet weak var firstName: UITextField!
+    
+    @IBOutlet var lastName: UIView!
+    
+    @IBOutlet weak var email: UITextField!
+    
+    
+    @IBOutlet weak var username: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         editImageButton.layer.cornerRadius = 20
-        profileImage.image = (DatabaseManager.findUsername(Username: currentUser?.username!))
+        var getuserpic:UserEntity? = DatabaseManager.findUsername(Username: (currentUser?.username!)!)
+        profileImage.image = UIImage(data: (getuserpic?.profilePicture)!)
         profileImage.layer.borderWidth = 1
         profileImage.layer.masksToBounds = false
         profileImage.layer.borderColor = UIColor.black.cgColor
@@ -36,6 +53,8 @@ class myProfileViewController: UIViewController{
     
     
     
+    
+    
    
 
 }
@@ -50,6 +69,9 @@ extension myProfileViewController:UIImagePickerControllerDelegate, UINavigationC
             profileImage.image = image
             profileImage.layer.cornerRadius = profileImage.frame.height/2
             profileImage.contentMode = .scaleAspectFill
+            currentUser?.profilePicture = image.pngData()
+           do { try DatabaseManager.context.save() }
+            catch{ print("Error in picture picker") }
         }
     }
 }

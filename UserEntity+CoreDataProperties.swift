@@ -22,8 +22,8 @@ extension UserEntity {
     @NSManaged public var password: String?
     @NSManaged public var reviews: NSObject?
     @NSManaged public var username: String?
+    @NSManaged public var profilePicture: Data?
     @NSManaged public var reviews_given: NSSet?
-    
 
 }
 

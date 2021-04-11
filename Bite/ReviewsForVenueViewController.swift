@@ -16,6 +16,7 @@ class ReviewsForVenueViewController:UIViewController {
     @IBOutlet weak var ReviewTable: UITableView!
     var selectedVenue:VenueEntity?
     var mac:NSManagedObjectContext?
+    public var currentUser:UserEntity?
     
     
     override func viewDidLoad() {

@@ -47,6 +47,7 @@ extension MapAndTableViewController:UITableViewDelegate, UITableViewDataSource{
         if let viewController = storyboard?.instantiateViewController(identifier: "ReviewsForVenueViewController") as? ReviewsForVenueViewController {
             //viewController.name = selectedVenue.name
             viewController.selectedVenue = selectedVenue
+            viewController.currentUser = self.currentUser
 
             
             self.navigationController?.show(viewController, sender: self)
@@ -127,6 +128,7 @@ extension ReviewsForVenueViewController:UITableViewDelegate, UITableViewDataSour
         cell.reviewName.text = array[indexPath.row].fullName
         cell.reviewText.text = array[indexPath.row].ratingText
         cell.reviewRating.rating = array[indexPath.row].ratingNum
+        cell.profilePic.image = UIImage(data: (self.currentUser?.profilePicture)!)
        // ReviewTable.rowHeight = cell.reviewText.contentSize.height
        
         return cell

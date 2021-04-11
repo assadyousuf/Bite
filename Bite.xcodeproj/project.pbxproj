@@ -28,12 +28,12 @@
 		AD7A51EE261C4F7300CB2B2D /* CosmosDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7A51ED261C4F7300CB2B2D /* CosmosDistrib.swift */; };
 		AD7A51F6261C54B100CB2B2D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7A51F5261C54B100CB2B2D /* CustomCell.swift */; };
 		AD9D4B6A261F15080094997D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD9D4B69261F15080094997D /* GoogleService-Info.plist */; };
-		ADE4C8D02622BB1600BF51BF /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8CF2622BB1500BF51BF /* UserEntity+CoreDataClass.swift */; };
-		ADE4C8D12622BB1600BF51BF /* VenueEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8CA2622BB1400BF51BF /* VenueEntity+CoreDataProperties.swift */; };
-		ADE4C8D22622BB1600BF51BF /* VenueEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8CE2622BB1500BF51BF /* VenueEntity+CoreDataClass.swift */; };
-		ADE4C8D32622BB1600BF51BF /* ReviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8CD2622BB1500BF51BF /* ReviewEntity+CoreDataProperties.swift */; };
-		ADE4C8D42622BB1600BF51BF /* ReviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8CC2622BB1500BF51BF /* ReviewEntity+CoreDataClass.swift */; };
-		ADE4C8D52622BB1600BF51BF /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8CB2622BB1500BF51BF /* UserEntity+CoreDataProperties.swift */; };
+		ADE4C8ED2622CEA800BF51BF /* ReviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8E72622CEA700BF51BF /* ReviewEntity+CoreDataClass.swift */; };
+		ADE4C8EE2622CEA800BF51BF /* VenueEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8E82622CEA700BF51BF /* VenueEntity+CoreDataClass.swift */; };
+		ADE4C8EF2622CEA800BF51BF /* VenueEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8E92622CEA700BF51BF /* VenueEntity+CoreDataProperties.swift */; };
+		ADE4C8F02622CEA800BF51BF /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8EA2622CEA700BF51BF /* UserEntity+CoreDataClass.swift */; };
+		ADE4C8F12622CEA800BF51BF /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8EB2622CEA700BF51BF /* UserEntity+CoreDataProperties.swift */; };
+		ADE4C8F22622CEA800BF51BF /* ReviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE4C8EC2622CEA800BF51BF /* ReviewEntity+CoreDataProperties.swift */; };
 		C94A683889D8036DCB5F320C /* Pods_Bite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3269D65A1EE4262481288C9 /* Pods_Bite.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,12 +62,12 @@
 		AD7A51ED261C4F7300CB2B2D /* CosmosDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosDistrib.swift; sourceTree = "<group>"; };
 		AD7A51F5261C54B100CB2B2D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		AD9D4B69261F15080094997D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		ADE4C8CA2622BB1400BF51BF /* VenueEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VenueEntity+CoreDataProperties.swift"; path = "/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/VenueEntity+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		ADE4C8CB2622BB1500BF51BF /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserEntity+CoreDataProperties.swift"; path = "/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/UserEntity+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		ADE4C8CC2622BB1500BF51BF /* ReviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ReviewEntity+CoreDataClass.swift"; path = "/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/ReviewEntity+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		ADE4C8CD2622BB1500BF51BF /* ReviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ReviewEntity+CoreDataProperties.swift"; path = "/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/ReviewEntity+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		ADE4C8CE2622BB1500BF51BF /* VenueEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "VenueEntity+CoreDataClass.swift"; path = "/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/VenueEntity+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		ADE4C8CF2622BB1500BF51BF /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserEntity+CoreDataClass.swift"; path = "/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/UserEntity+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		ADE4C8E72622CEA700BF51BF /* ReviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReviewEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ADE4C8E82622CEA700BF51BF /* VenueEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VenueEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ADE4C8E92622CEA700BF51BF /* VenueEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VenueEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		ADE4C8EA2622CEA700BF51BF /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		ADE4C8EB2622CEA700BF51BF /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		ADE4C8EC2622CEA800BF51BF /* ReviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReviewEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		D3269D65A1EE4262481288C9 /* Pods_Bite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,12 +159,12 @@
 		AD664026261968C1005B366E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ADE4C8CC2622BB1500BF51BF /* ReviewEntity+CoreDataClass.swift */,
-				ADE4C8CD2622BB1500BF51BF /* ReviewEntity+CoreDataProperties.swift */,
-				ADE4C8CE2622BB1500BF51BF /* VenueEntity+CoreDataClass.swift */,
-				ADE4C8CA2622BB1400BF51BF /* VenueEntity+CoreDataProperties.swift */,
-				ADE4C8CF2622BB1500BF51BF /* UserEntity+CoreDataClass.swift */,
-				ADE4C8CB2622BB1500BF51BF /* UserEntity+CoreDataProperties.swift */,
+				ADE4C8EA2622CEA700BF51BF /* UserEntity+CoreDataClass.swift */,
+				ADE4C8EB2622CEA700BF51BF /* UserEntity+CoreDataProperties.swift */,
+				ADE4C8E72622CEA700BF51BF /* ReviewEntity+CoreDataClass.swift */,
+				ADE4C8EC2622CEA800BF51BF /* ReviewEntity+CoreDataProperties.swift */,
+				ADE4C8E82622CEA700BF51BF /* VenueEntity+CoreDataClass.swift */,
+				ADE4C8E92622CEA700BF51BF /* VenueEntity+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,25 +292,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE4C8D22622BB1600BF51BF /* VenueEntity+CoreDataClass.swift in Sources */,
 				AD505D12261D0E13003A2340 /* myProfileViewController.swift in Sources */,
-				ADE4C8D02622BB1600BF51BF /* UserEntity+CoreDataClass.swift in Sources */,
+				ADE4C8F12622CEA800BF51BF /* UserEntity+CoreDataProperties.swift in Sources */,
 				AD4255C426169F2500FF8D9C /* createAccountViewController.swift in Sources */,
 				AD66402C261A62D1005B366E /* MapAndTableViewController.swift in Sources */,
 				AD7A51F6261C54B100CB2B2D /* CustomCell.swift in Sources */,
-				ADE4C8D32622BB1600BF51BF /* ReviewEntity+CoreDataProperties.swift in Sources */,
 				AD42557B26153D0A00FF8D9C /* ViewController.swift in Sources */,
+				ADE4C8F22622CEA800BF51BF /* ReviewEntity+CoreDataProperties.swift in Sources */,
 				AD42558126153D0A00FF8D9C /* Bite.xcdatamodeld in Sources */,
 				AD42557726153D0A00FF8D9C /* AppDelegate.swift in Sources */,
+				ADE4C8ED2622CEA800BF51BF /* ReviewEntity+CoreDataClass.swift in Sources */,
+				ADE4C8EF2622CEA800BF51BF /* VenueEntity+CoreDataProperties.swift in Sources */,
 				AD7A51EE261C4F7300CB2B2D /* CosmosDistrib.swift in Sources */,
 				AD505D19261EFBDA003A2340 /* Data.swift in Sources */,
-				ADE4C8D12622BB1600BF51BF /* VenueEntity+CoreDataProperties.swift in Sources */,
-				ADE4C8D52622BB1600BF51BF /* UserEntity+CoreDataProperties.swift in Sources */,
 				AD505D15261D1649003A2340 /* ReviewsForVenueViewController.swift in Sources */,
 				AD4255AC2615824500FF8D9C /* LogInDetailViewController.swift in Sources */,
+				ADE4C8F02622CEA800BF51BF /* UserEntity+CoreDataClass.swift in Sources */,
 				AD664041261BA6F2005B366E /* Delegates.swift in Sources */,
-				ADE4C8D42622BB1600BF51BF /* ReviewEntity+CoreDataClass.swift in Sources */,
 				AD702DA3262126A2005BF4A1 /* RatingReviewController.swift in Sources */,
+				ADE4C8EE2622CEA800BF51BF /* VenueEntity+CoreDataClass.swift in Sources */,
 				AD42557926153D0A00FF8D9C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

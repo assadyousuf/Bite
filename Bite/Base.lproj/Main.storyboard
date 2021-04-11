@@ -683,7 +683,13 @@
                     <navigationItem key="navigationItem" id="gHM-Ui-8q8"/>
                     <connections>
                         <outlet property="editImageButton" destination="Ryx-nh-pHQ" id="0j2-rI-XC0"/>
+                        <outlet property="email" destination="2JX-DW-tF2" id="ST4-Zw-b1Z"/>
+                        <outlet property="firstName" destination="RoT-Rz-b9X" id="w2f-eo-bdc"/>
+                        <outlet property="lastName" destination="TUo-8N-38q" id="19p-rU-kbx"/>
+                        <outlet property="password" destination="HrG-kJ-T5o" id="GIh-6r-6Qx"/>
                         <outlet property="profileImage" destination="y8l-ae-lrp" id="zGt-aH-Ur5"/>
+                        <outlet property="saveChangesButton" destination="EvG-ZG-jqp" id="q24-LW-w6B"/>
+                        <outlet property="username" destination="NZz-QY-UhV" id="Ypc-OP-Xul"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWF-ba-khd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

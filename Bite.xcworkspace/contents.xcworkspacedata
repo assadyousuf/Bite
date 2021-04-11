@@ -2,22 +2,22 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/ReviewEntity+CoreDataClass.swift">
+      location = "group:UserEntity+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/ReviewEntity+CoreDataProperties.swift">
+      location = "group:UserEntity+CoreDataProperties.swift">
    </FileRef>
    <FileRef
-      location = "group:/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/VenueEntity+CoreDataClass.swift">
+      location = "group:ReviewEntity+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/VenueEntity+CoreDataProperties.swift">
+      location = "group:ReviewEntity+CoreDataProperties.swift">
    </FileRef>
    <FileRef
-      location = "group:/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/UserEntity+CoreDataClass.swift">
+      location = "group:VenueEntity+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:/Users/assadyousuf/Desktop/CSE/Bite/Bite/Images/UserEntity+CoreDataProperties.swift">
+      location = "group:VenueEntity+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:Bite.xcodeproj">

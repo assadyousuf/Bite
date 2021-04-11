@@ -13,7 +13,7 @@
         <attribute name="first_name" optional="YES" attributeType="String"/>
         <attribute name="last_name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
-        <attribute name="profilePicture" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="profilePicture" optional="YES" attributeType="Binary"/>
         <attribute name="reviews" optional="YES" attributeType="Transformable"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <relationship name="reviews_given" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReviewEntity"/>
