@@ -12,27 +12,33 @@ import CoreData
 class RatingReviewController:UIViewController{
     
     @IBOutlet weak var instructionLabel: UILabel!
-    var selectedVenue:Venue?
+    var selectedVenue:VenueEntity?
     @IBOutlet weak var reviewText: UITextView!
     @IBOutlet weak var Starz: CosmosView!
     @IBOutlet weak var addReview: UIButton!
    
-    var mac:NSManagedObjectContext?
+    var currentUser:UserEntity?
     
     
     @IBAction func addReviewToResturant(_ sender: Any) {
         if (reviewText.text != ""){
-            let r = review()
-            r.rating = Starz.rating
-            r.text = reviewText.text
-            selectedVenue?.list_of_reviews.append(r)
             
-            let entity = NSEntityDescription.entity(forEntityName: "VenueEntity", in: mac!)
-            let newVenue = NSManagedObject(entity: entity!, insertInto: mac!)
-            newVenue.setValue(selectedVenue?.list_of_reviews, forKey:"list_of_reviews")
+            let r = ReviewEntity(context: DatabaseManager.context)
+            r.ratingNum = Starz.rating
+            r.ratingText = reviewText.text
+            r.venueName = selectedVenue?.name
+            
+            selectedVenue?.addToListOfReviews(r)
+            
+           
+            
+            try! DatabaseManager.context.save()
+            
+            
             do {
-                try mac?.save()
-                print("Sucesss Saving")
+                try DatabaseManager.context.save()
+                print("Sucesss Saving Rating ")
+                print(selectedVenue?.listOfReviews?.count)
                 
             } catch {
                 print("Failed Saving")

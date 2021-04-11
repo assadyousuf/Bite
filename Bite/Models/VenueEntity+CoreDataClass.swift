@@ -2,7 +2,7 @@
 //  VenueEntity+CoreDataClass.swift
 //  
 //
-//  Created by Assad Yousuf on 4/8/21.
+//  Created by Assad Yousuf on 4/10/21.
 //
 //
 

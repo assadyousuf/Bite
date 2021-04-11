@@ -30,7 +30,7 @@ extension MapAndTableViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         cell.name.text = self.local_resturants[indexPath.row].name
-        cell.Stars.rating = Double((self.local_resturants[indexPath.row].rating)!)
+        cell.Stars.rating = Double((self.local_resturants[indexPath.row].rating))
         cell.Stars.settings.fillMode = .precise
         cell.Stars.settings.updateOnTouch = false
         return cell
@@ -46,8 +46,9 @@ extension MapAndTableViewController:UITableViewDelegate, UITableViewDataSource{
         let selectedVenue = local_resturants[indexPath.row]
         if let viewController = storyboard?.instantiateViewController(identifier: "ReviewsForVenueViewController") as? ReviewsForVenueViewController {
             //viewController.name = selectedVenue.name
-            viewController.selectedVenue = local_resturants[indexPath.row]
-            viewController.mac = self.mag
+            viewController.selectedVenue = selectedVenue
+
+            
             self.navigationController?.show(viewController, sender: self)
             
         }
@@ -102,7 +103,7 @@ extension MapAndTableViewController : CLLocationManagerDelegate,MKMapViewDelegat
 
 extension ReviewsForVenueViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedVenue!.list_of_reviews.count
+        return selectedVenue!.listOfReviews!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,9 +120,13 @@ extension ReviewsForVenueViewController:UITableViewDelegate, UITableViewDataSour
        
         //cell.reviewName.text = "Assad Yousuf"
         
-        cell.reviewText.text = selectedVenue!.list_of_reviews[indexPath.row].text
-        cell.reviewName.text = selectedVenue!.list_of_reviews[indexPath.row].reviewer
-        cell.reviewRating.rating = selectedVenue!.list_of_reviews[indexPath.row].rating!
+        
+        var array = selectedVenue?.listOfReviews?.allObjects as! [ReviewEntity]
+        
+        
+        cell.reviewName.text = array[indexPath.row].fullName
+        cell.reviewText.text = array[indexPath.row].ratingText
+        cell.reviewRating.rating = array[indexPath.row].ratingNum
        // ReviewTable.rowHeight = cell.reviewText.contentSize.height
        
         return cell

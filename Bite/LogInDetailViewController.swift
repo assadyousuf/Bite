@@ -19,11 +19,14 @@ class LogInDetailViewController: UIViewController {
     
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
+    
+    var currentUser:UserEntity?
     //MARK: Before Page Loads
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         logInButon.layer.cornerRadius = 20
+        
         
     }
     
@@ -31,9 +34,10 @@ class LogInDetailViewController: UIViewController {
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
     if identifier == "LoginToMap" {
-        let x = User.checkIfUsernameExists(username: usernameField.text!, moc: self.moc)
-        let y = User.checkIfPasswordExists(username: passwordField.text!, moc: self.moc)
+        let x = DatabaseManager.findUsername(Username: usernameField.text!)
+        let y = DatabaseManager.findPassword(Password: passwordField.text!)
         if usernameField.text != "" && passwordField.text != "" && x != nil  && y != nil{
+            
             return true
         } else {
             instructionLabel.text = "User with that username does not exist"
@@ -46,7 +50,11 @@ class LogInDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC = segue.destination as? MapAndTableViewController {
-            nextVC.mag = moc
+            currentUser = DatabaseManager.findUsername(Username: usernameField.text!)
+            if currentUser == nil {
+                currentUser = UserEntity(context: DatabaseManager.context) }
+            
+            nextVC.currentUser = currentUser
         }
     }
     

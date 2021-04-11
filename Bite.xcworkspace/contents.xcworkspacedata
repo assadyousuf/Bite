@@ -2,6 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Bite/Models/VenueEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bite/Models/VenueEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bite/Models/ReviewEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bite/Models/ReviewEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bite/Models/UserEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bite/Models/UserEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Bite.xcodeproj">
    </FileRef>
    <FileRef

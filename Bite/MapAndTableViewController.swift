@@ -16,8 +16,9 @@ class MapAndTableViewController: UIViewController {
     
     @IBOutlet weak var naviagtionItem: UINavigationItem!
     
-    public var local_resturants:[Venue] = []
+    public var local_resturants:[VenueEntity] = []
     var mag : NSManagedObjectContext?
+    var currentUser:UserEntity?
    
     
     
@@ -31,31 +32,33 @@ class MapAndTableViewController: UIViewController {
   
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         if self.isMovingFromParent {
-            // Your code...
-            self.saveLocalResturants()
+            (self.parent as? LogInDetailViewController)?.currentUser = currentUser
         }
     }
      
-    func saveLocalResturants() {
-        
-        for v in local_resturants{
-        Venue.saveResturant(name: v.name!, id: v.id!, rating: v.rating!, price: v.price!, is_closed: v.is_closed!, distance: v.distance!, address: v.address!, list_of_reviews: v.list_of_reviews, moc: mag)
-        }
-
-    }
     
     
-    func loadLocalResturantReviews(){
-        let list = Venue.LoadData(moc: mag)
-        for l in list! {
-            for r in local_resturants {
-                if l.name == r.name {
-                    r.list_of_reviews = l.list_of_reviews as! [review]
+    func loadLocalResturantRatings(){
+      let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ReviewEntity")
+        do {
+            let result = try DatabaseManager.context.fetch(request) as! [ReviewEntity]
+            
+            for i in result {
+                for j in local_resturants{
+                    if j.name == i.venueName {
+                       // j.rating = (i.ratingNum + j.rating ) / Double(j.review_count-1)
+                        j.rating = ((Double(j.review_count)-1.0) * j.rating) + i.ratingNum
+                        j.rating = j.rating / Double(j.review_count)
+                        j.listOfReviews = result                    }
                 }
             }
+        } catch {
+            print("Loading venues failed")
         }
+        
+        
+    
     }
     
     
@@ -81,7 +84,8 @@ class MapAndTableViewController: UIViewController {
                     }
                     
                 }
-                self.loadLocalResturantReviews()
+               
+                self.loadLocalResturantRatings()
             }
         }
             )
@@ -120,7 +124,7 @@ class MapAndTableViewController: UIViewController {
         
     
     
-func fetchYelpData(latitude: Double,longitude: Double, completionHandler: @escaping ([Venue]?, Error?) -> Void) {
+func fetchYelpData(latitude: Double,longitude: Double, completionHandler: @escaping ([VenueEntity]?, Error?) -> Void) {
         
         
         // MARK: Retrieve venues from Yelp API
@@ -152,19 +156,23 @@ func fetchYelpData(latitude: Double,longitude: Double, completionHandler: @escap
                 /// Businesses
                 guard let businesses = resp.value(forKey: "businesses") as? [NSDictionary] else { return }
 
-                var venuesList: [Venue] = []
+                var venuesList: [VenueEntity] = []
+                
+                DatabaseManager.delete(entity_name: "VenueEntity")
                 
                 /// Accessing each business
                 for business in businesses {
-                    var venue = Venue()
+                    var venue = VenueEntity(context: DatabaseManager.context)
                     venue.name = business.value(forKey: "name") as? String
                     venue.id = business.value(forKey: "id") as? String
-                    venue.rating = business.value(forKey: "rating") as? Float
+                    venue.rating = business.value(forKey: "rating") as! Double
                     venue.price = business.value(forKey: "price") as? String
-                    venue.is_closed = business.value(forKey: "is_closed") as? Bool
-                    venue.distance = business.value(forKey: "distance") as? Double
+                    venue.is_closed = business.value(forKey: "is_closed") as! Bool
+                    venue.distance = business.value(forKey: "distance") as! Double
                     let address = business.value(forKeyPath: "location.display_address") as? [String]
                     venue.address = address?.joined(separator: "\n")
+                    venue.review_count = business.value(forKey: "review_count") as! Int64
+                    
                     
                     venuesList.append(venue)
                 }

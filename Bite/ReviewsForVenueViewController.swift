@@ -14,7 +14,7 @@ class ReviewsForVenueViewController:UIViewController {
     public var local_resturants:[Venue] = []
    
     @IBOutlet weak var ReviewTable: UITableView!
-    var selectedVenue:Venue?
+    var selectedVenue:VenueEntity?
     var mac:NSManagedObjectContext?
     
     
@@ -33,8 +33,8 @@ class ReviewsForVenueViewController:UIViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC = segue.destination as? RatingReviewController {
             nextVC.selectedVenue = selectedVenue
-            nextVC.mac = self.mac
-            let managedObjectContext = Persistence.sharedInstance.managedObjectContext
+            //nextVC.mac = self.mac
+            //let managedObjectContext = Persistence.sharedInstance.managedObjectContext
 
         }
        

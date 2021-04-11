@@ -36,8 +36,8 @@ class createAccountViewController: UIViewController {
     
     
     @IBAction func createAccount(_ sender: Any) {
-      let x =  User.checkIfUsernameExists(username: Username.text!, moc: managedObjectContext)
-       
+      
+        let x = DatabaseManager.findUsername(Username: Username.text!)
         if firstName.text != "" &&
             lastName.text != "" &&
             Email.text != "" &&
@@ -46,8 +46,8 @@ class createAccountViewController: UIViewController {
             
             
             
-            User.delete(moc: managedObjectContext, entity_name: "UserEntity")
-           var x = User.addUser(firstName: firstName.text!, lastName: lastName.text!, Email: Email.text!, Username: Username.text!, Password: Password.text!, moc: managedObjectContext)
+           
+            DatabaseManager.addUser(firstName: firstName.text!, lastName: lastName.text!, Email: Email.text!, Username: Username.text!, Password: Password.text!)
             firstName.text = ""
             lastName.text = ""
             Email.text = ""
