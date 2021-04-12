@@ -27,7 +27,7 @@ class RatingReviewController:UIViewController{
             r.ratingNum = Starz.rating
             r.ratingText = reviewText.text
             r.venueName = selectedVenue?.name
-            
+            r.fullName = (currentUser?.first_name)! + " " +  (currentUser?.last_name)!
             selectedVenue?.addToListOfReviews(r)
             r.addToListOfVenuesReviewed(selectedVenue!)
             

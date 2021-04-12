@@ -129,6 +129,7 @@ extension ReviewsForVenueViewController:UITableViewDelegate, UITableViewDataSour
         cell.reviewText.text = array[indexPath.row].ratingText
         cell.reviewRating.rating = array[indexPath.row].ratingNum
         cell.profilePic.image = UIImage(data: (self.currentUser?.profilePicture)!)
+        cell.reviewName.text = array[indexPath.row].fullName
        // ReviewTable.rowHeight = cell.reviewText.contentSize.height
        
         return cell

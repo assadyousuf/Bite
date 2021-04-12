@@ -18,7 +18,9 @@ class myProfileViewController: UIViewController{
     
     @IBOutlet weak var firstName: UITextField!
     
-    @IBOutlet var lastName: UIView!
+    
+    
+    @IBOutlet weak var lastName: UITextField!
     
     @IBOutlet weak var email: UITextField!
     
@@ -50,6 +52,38 @@ class myProfileViewController: UIViewController{
             present(imagePickerVC, animated: true)
     }
     
+    
+    
+    @IBAction func saveChanges(_ sender: Any) {
+        if firstName.text != "" {
+            currentUser?.first_name = firstName.text
+            firstName.text = ""
+        }
+        if lastName.text != "" {
+            currentUser?.last_name = lastName.text
+            lastName.text = ""
+        }
+        if email.text != ""{
+            currentUser?.email = email.text
+            email.text = ""
+        }
+        if username.text != ""{
+            currentUser?.username = username.text
+            username.text = ""
+        }
+        if password.text != ""{
+            currentUser?.password = password.text
+            password.text = ""
+        }
+        do { try DatabaseManager.context.save() }
+         catch{ print("Error in saving picture") }
+        
+        
+        
+        
+        
+        
+    }
     
     
     

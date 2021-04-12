@@ -23,9 +23,9 @@ class ViewController: UIViewController {
     //MARK: Before Page Loads
     override func viewDidLoad() {
         
-      // DatabaseManager.delete(entity_name: "ReviewEntity")
-       //DatabaseManager.delete(entity_name: "UserEntity")
-       //DatabaseManager.delete(entity_name: "VenueEntity")
+      DatabaseManager.delete(entity_name: "ReviewEntity")
+      DatabaseManager.delete(entity_name: "UserEntity")
+      DatabaseManager.delete(entity_name: "VenueEntity")
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.

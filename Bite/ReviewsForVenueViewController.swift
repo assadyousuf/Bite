@@ -34,6 +34,7 @@ class ReviewsForVenueViewController:UIViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC = segue.destination as? RatingReviewController {
             nextVC.selectedVenue = selectedVenue
+            nextVC.currentUser = currentUser
             //nextVC.mac = self.mac
             //let managedObjectContext = Persistence.sharedInstance.managedObjectContext
 
